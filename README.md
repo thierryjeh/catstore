@@ -1,24 +1,19 @@
-# README
+ Catstore 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ https://catstore-gallery.herokuapp.com/
 
-Things you may want to cover:
+ or
 
-* Ruby version
+`bundle install`
 
-* System dependencies
+`rails db:create`
 
-* Configuration
+`rails db:migrate`
 
-* Database creation
+`rails db:seed`
 
-* Database initialization
+`rails s`
 
-* How to run the test suite
+ http://localhost:3000/
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...

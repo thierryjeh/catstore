@@ -1,0 +1,37 @@
+<!-- Card -->
+<div class="row row-cols-1 row-cols-md-2">
+  <% @items.each do |item| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100">
+        <a href="<%= item_path(item.id) %>">
+          <img src="<%= item.image_url %>" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <!-- Name + Breed-->
+              <h5 class="card-title text-center text-info"><%= item.title %> </h5>
+            </div>
+            <div class="col-4">
+              <!-- Notation -->
+              <p class="card-text text-center"><span class="text-warning"> </span></p>
+            </div>
+          </div>
+          <!-- Description -->
+          <p class="card-text"><%= truncate(item.description, :length => 150) %></p>
+          <!-- Price -->
+          <p class="card-text h4 text-center text-primary"><%= item.price %>€</p>
+        </div>
+        <div class="card-footer text-center">
+          <% if is_item_in_cart?(item) %>
+            <!-- Button Remove item from cart-->
+            <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE" class="btn btn-outline-danger"><i class="fab fa-opencart"></i></a>
+          <% else %>
+            <!-- Button add item to cart -->
+            <a href="<%= new_shopping_session_path(id: item.id) %>" class="btn btn-info"><i class="fab fa-opencart"></i></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

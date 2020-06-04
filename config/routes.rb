@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'items#index'
+  devise_for :users
+  resources 'items'
+  resources 'carts'
+  resources 'shopping_sessions', only: [:new, :destroy]
+  resources :charges
 end
